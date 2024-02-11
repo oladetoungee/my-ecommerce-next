@@ -10,11 +10,11 @@ const NavigationHeader: React.FC = () => {
                 <Link href="/products">
                     Products
                 </Link>
-                <Link href="/about">
+                <Link href="/login">
                     About
                 </Link>
-                <Link href="/contact">
-                    Contact
+                <Link href="/profile">
+                    Profile
                 </Link>
             </nav>
         </header>
