@@ -3,12 +3,16 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+
+
 type Album = {
     userId: number;
     id: number;
     title: string;
 };
+
 const Client = () => {
+
     const [albums, setAlbums] = useState<Album[]>([]);
     const token = "your_actual_token_value";
     localStorage.setItem('token', token);
@@ -36,11 +40,12 @@ const Client = () => {
         <ul>
             {/* Mapping through the fetched albums and displaying them in a list */}
             {albums.map((album) => (
-                <>
-             <Link className='cursor-pointer' href={`/album/${album.id}`} key={album.id}>{album.title}</Link>
-     
-                
-                </>
+        
+                <Link href={`/client/${album.id}`}>
+                    <li key={album.id}>
+                        {album.title}
+                    </li>
+                </Link>
                
             ))}
         </ul>
